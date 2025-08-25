@@ -6,8 +6,11 @@
         - Write a function that prints the array.
 */
 
+#include <ctime>
 #include <iostream>
 #include <string>
+#include <time.h>
+
 using namespace std;
 
 // constants
@@ -22,6 +25,8 @@ void PrintArrays(string n[], double s[], int size);
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 int main() {
+    srand(time(NULL));
+
     string names[MAX]; // name array
     double salaries[MAX]; // salary array
     int size = 0;
@@ -43,6 +48,7 @@ return 0;
 // FillArrays function
 void FillArrays(string n[], double s[], int& size) {
     size = rand() % MAX + 1;
+    cout << size << endl;
     
     for (int i = 0; i < size; i++) {
         // input name
